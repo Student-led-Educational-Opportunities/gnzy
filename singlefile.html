@@ -38,8 +38,8 @@
     <meta name="twitter:description" content="Play unbl*cked games like Crazy Cattle 3D and DriveMad on GN-Math. Fast, free, no downloads—perfect for school or home.">
     <style>
         :root {
-    --primary: #fc2651;
-    --primary-hover: #e91e47;
+    --primary: #ffff00;
+    --primary-hover: #aaaa00;
     --primary-light: rgba(252, 38, 81, 0.1);
     --primary-lighter: rgba(252, 38, 81, 0.05);
     --accent: #8b5cf6;
@@ -66,21 +66,21 @@
     --radius-sm: 8px;
     --radius-lg: 16px;
     --radius-xl: 20px;
-    --gradient-primary: linear-gradient(135deg, #fc2651 0%, #e91e47 100%);
+    --gradient-primary: linear-gradient(135deg, #ff0 0%, #ee0 100%);
     --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
     --gradient-surface: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
 }
 
 .dark-mode {
-    --primary: #fc2651;
-    --primary-hover: #ff4d75;
+    --primary: #ff0;
+    --primary-hover: #aa0;
     --primary-light: rgba(252, 38, 81, 0.15);
     --primary-lighter: rgba(252, 38, 81, 0.08);
     --accent: #a855f7;
     --accent-light: rgba(168, 85, 247, 0.15);
     --success: #34d399;
     --warning: #fbbf24;
-    --text: #f1f5f9;
+    --text: #ff0;
     --text-muted: #94a3b8;
     --text-light: #64748b;
     --bg: #0f172a;
@@ -96,7 +96,7 @@
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.6);
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.7), 0 8px 10px -6px rgb(0 0 0 / 0.7);
     --shadow-glow: 0 0 20px rgba(252, 38, 81, 0.4);
-    --gradient-primary: linear-gradient(135deg, #fc2651 0%, #ff4d75 100%);
+    --gradient-primary: linear-gradient(135deg, #ff0 0%, #ee0 100%);
     --gradient-accent: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
     --gradient-surface: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
@@ -120,7 +120,7 @@ body {
 
 header {
     background: var(--gradient-primary);
-    color: white;
+    color: rgb(0, 0, 0);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -142,7 +142,8 @@ header {
     font-size: 1.75rem;
     font-weight: 800;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+    background: linear-gradient(135deg, #000 0%, rgba(0, 0, 0, 0.8) 100%);
+    color: #000;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -352,7 +353,7 @@ main {
 
 .zone-header {
     background: var(--gradient-primary);
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 0.4rem 1.5rem;
     display: flex;
     align-items: center;
@@ -378,14 +379,14 @@ main {
 
 #zoneAuthor {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
     text-decoration: none;
     transition: all 0.2s ease;
     font-weight: 500;
 }
 
 #zoneAuthor:hover {
-    color: white;
+    color: rgb(36, 36, 36);
     text-decoration: underline;
 }
 
@@ -396,8 +397,8 @@ main {
 
 .zone-controls button {
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: rgb(0, 0, 0);
     padding: 0.625rem 1rem;
     border-radius: var(--radius);
     cursor: pointer;
@@ -470,7 +471,7 @@ main {
 
 .popup-header {
     background: var(--gradient-primary);
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 1.25rem 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -718,7 +719,7 @@ footer {
 
     <header>
         <div class="header-content">
-            <div class="logo">gn-math</div>
+            <div class="logo">gn-math (SLUNGA)</div>
             <div class="search-container">
                 <input type="text" id="searchBar" placeholder="Search zones..." oninput="filterZones()">
                 <select id="sortOptions" onchange="sortZones()">
