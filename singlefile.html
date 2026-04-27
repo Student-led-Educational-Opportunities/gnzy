@@ -812,6 +812,8 @@ let zoneFrame = document.getElementById('zoneFrame');
 const searchBar = document.getElementById('searchBar');
 const sortOptions = document.getElementById('sortOptions');
 const filterOptions = document.getElementById('filterOptions');
+		const PB_URL = 'https://slunga.westus2.cloudapp.azure.com:8091';
+        const PAGE_ID = 'gn_singlefile';
 // https://www.jsdelivr.com/tools/purge
 const zonesurls = [
     "https://cdn.jsdelivr.net/gh/freebuisness/assets@main/zones.json",
@@ -831,6 +833,22 @@ function toTitleCase(str) {
     text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
   );
 }
+        async function trackGameClick(game) {
+            try {
+                await fetch(`${PB_URL}/api/collections/gn_game_clicks/records`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        game_name: game.name,
+						game_id: game.id,
+                        page_id: PAGE_ID
+                    })
+                });
+            } catch (e) {
+                console.error("Tracking failed", e);
+            }
+        }
+
 async function listZones() {
     try {
       let sharesponse;
@@ -1130,6 +1148,7 @@ function openZone(file) {
                 document.getElementById('zoneAuthor').href = file.authorLink;
             }
             zoneViewer.style.display = "block";
+			trackGameClick(file);
             try {
                 const url = new URL(window.location);
                 url.searchParams.set('id', file.id);
